@@ -1,0 +1,6 @@
+Manual:
+print: prints current cinema room status;
+reserve RowSeat: reserves a seat in position [Row][Seat] if avaiable;
+cancel <Reservation-code>: cancel booked seat;
+quit: exit program.
+

@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "fcntl.h": "c",
+        "pthread.h": "c",
+        "ctype.h": "c",
+        "stdlib.h": "c",
+        "stdint.h": "c",
+        "log.h": "c",
+        "write_file.h": "c"
+    }
+}
