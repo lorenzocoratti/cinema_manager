@@ -4,9 +4,11 @@ Multi-threaded client-server program in C for reserving cinema seats.
 
 ## Compile
 
-Server: gcc communication.c cinema_room.c write_file.c log.c config.c server.c -o server
-Client: gcc communication.c response.c client.c -o client
-both can be compiled with make.
+Server: `gcc communication.c cinema_room.c write_file.c log.c config.c server.c -o server`
+
+Client: `gcc communication.c response.c client.c -o client`
+
+both can be compiled with `make`.
 
 ## Run
 
