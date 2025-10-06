@@ -66,7 +66,7 @@ void init_files(char *rows, char *columns)
 
 int append_seat_to_csvfile(int R, int C)
 {
-    int fd = open(STATUS_FILE, O_WRONLY | O_APPEND, 0644);
+    int fd = open(STATUS_FILE, O_WRONLY | O_APPEND);
     if (fd < 0)
     {
         perror("open for append");
@@ -119,7 +119,7 @@ char *append_reservation_code(int R, int C, int index)
     }
     pthread_mutex_lock(&codes_mutex);
 
-    fd = open(CODES_FILE, O_WRONLY | O_APPEND | O_CREAT, 0644);
+    fd = open(CODES_FILE, O_WRONLY | O_APPEND);
     if (fd < 0)
     {
         perror("open reservation codes file");

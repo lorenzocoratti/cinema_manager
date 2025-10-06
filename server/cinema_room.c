@@ -109,7 +109,7 @@ void reserve_multiple_seats(int connection_fd, char *buffer)
 
     if (count == 0)
     {
-        write(connection_fd, "No seats specified.\nEND_MSG\n", 27);
+        write(connection_fd, "No seats specified.\n", 22);
         return;
     }
 
@@ -156,7 +156,7 @@ void reserve_multiple_seats(int connection_fd, char *buffer)
 
 int is_seat_taken(int R, int C)
 {
-    int fd = open(STATUS_FILE, O_RDONLY | O_CREAT, 0644);
+    int fd = open(STATUS_FILE, O_RDONLY);
     if (fd < 0)
     {
         perror("open for read");
