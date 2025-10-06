@@ -109,7 +109,7 @@ void reserve_multiple_seats(int connection_fd, char *buffer)
 
     if (count == 0)
     {
-        write(connection_fd, "No seats specified.\n", 22);
+        write(connection_fd, "No seats specified.\n", 21);
         return;
     }
 
