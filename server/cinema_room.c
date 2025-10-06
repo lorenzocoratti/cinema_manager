@@ -127,7 +127,7 @@ void reserve_multiple_seats(int connection_fd, char *buffer)
     }
 
     // all seats free, reserve
-    char all_msgs[512];
+    char all_msgs[MAXBUFFER];
     for (int i = 0; i < count; i++)
     {
         if (append_seat_to_csvfile(Rlist[i], Clist[i]) != 0)
@@ -163,7 +163,7 @@ int is_seat_taken(int R, int C)
         return 0; // free if file is non existent
     }
 
-    char line[64];
+    char line[MAXLINE];
     int idx = 0;
     int bytesread;
 
@@ -198,7 +198,7 @@ int is_seat_taken(int R, int C)
 
 void cancel_reservation(int connection_fd, char *buffer)
 {
-    char code[128]; // read input
+    char code[MAXLINE]; // read input
     if (sscanf(buffer, "cancel %127s", code) != 1)
     {
         const char *err = "Invalid command, use cancel <code>.\n";

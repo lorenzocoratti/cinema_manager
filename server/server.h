@@ -2,7 +2,7 @@
 #define SERVER_H
 
 #define PORT 12345
-#define MAXBUFFER 1024
+#define MAXBUFFER 512
 #define MAXLINE 128
 #define NCLIENTS 20
 

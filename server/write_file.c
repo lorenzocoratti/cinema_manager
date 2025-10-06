@@ -22,7 +22,7 @@
 void init_files(char *rows, char *columns)
 {
     int csv_fd, log_fd, reservationcodes_fd;
-    char buf[64];
+    char buf[MAXLINE];
     int len = snprintf(buf, sizeof(buf), "%s,%s\n", rows, columns);
     if (len < 0 || len >= sizeof(buf))
     {
@@ -74,7 +74,7 @@ int append_seat_to_csvfile(int R, int C)
         return -1;
     }
 
-    char buf[64];
+    char buf[MAXLINE];
     int len = snprintf(buf, sizeof(buf), "%c,%d,1\n", 'A' + R, C + 1);
     if (len < 0 || len >= sizeof(buf))
     {
@@ -168,7 +168,7 @@ int remove_reservation_code(const char *code, int *outR, int *outC)
         return -1;
     }
 
-    char prefix[64];
+    char prefix[MAXLINE];
     snprintf(prefix, sizeof(prefix), "%s-", code);
 
     char line[MAXLINE];
