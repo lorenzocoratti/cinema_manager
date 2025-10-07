@@ -34,8 +34,6 @@ int main(int argc, char **argv)
     signal_handler();            // intercept signals
     srand((unsigned)time(NULL)); // initialize seed for code generation
     initialize_mutex();
-    log_init(LOG_FILE); // initialize server log
-    log_msg("INFO", "Server started on port %d", PORT);
     listen_fd = connection(); // enstablish socket
 }
 

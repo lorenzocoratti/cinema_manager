@@ -7,23 +7,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "config.h"
-
-int log_fd;
-
-void log_init(char *filename)
-{
-    log_fd = open(filename, O_WRONLY | O_CREAT | O_APPEND, 0644);
-    if (log_fd < 0)
-    {
-        perror("open");
-        exit(EXIT_FAILURE);
-    }
-    return;
-}
+#include "write_file.h"
 
 void log_msg(char *level, char *fmt, ...)
 {
     pthread_mutex_lock(&log_mutex);
+    int log_fd = open(LOG_FILE, O_WRONLY | O_APPEND);
     if (log_fd < 0)
         return;
 
@@ -50,6 +39,10 @@ void log_msg(char *level, char *fmt, ...)
 
 void log_close()
 {
+
+    int log_fd = open(LOG_FILE, O_RDONLY);
+    if (log_fd < 0)
+        return;
     if (log_fd >= 0)
     {
         close(log_fd);

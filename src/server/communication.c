@@ -50,7 +50,7 @@ int connection() // ret listen_fd
         perror("listen");
         exit(EXIT_FAILURE);
     }
-
+    log_msg("INFO", "Server started on port %d", PORT);
     printf("Server started on port %d, waiting for clients to connect...\n", PORT);
 
     for (;;)
