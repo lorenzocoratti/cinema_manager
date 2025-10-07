@@ -1,10 +1,10 @@
 #ifndef WRITE_FILE_H
 #define WRITE_FILE_H
 
-#define STATUS_FILE "cinema_status.csv"
-#define CODES_FILE "reservation_codes.txt"
-#define LOG_FILE "server.log"
-#define CODE_LEN 32
+#define STATUS_FILE "../fileserver/cinema_status.csv"
+#define CODES_FILE "../fileserver/reservation_codes.txt"
+#define LOG_FILE "../fileserver/server.log"
+#define CODE_LEN 128
 #define LINE_LEN 64
 #define MAXLINE 128
 

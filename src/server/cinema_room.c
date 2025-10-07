@@ -231,7 +231,7 @@ void cancel_reservation(int connection_fd, char *buffer)
 
     log_msg("INFO", "Client fd = %d cancelled reservation with code %s", connection_fd, code);
 
-    char resp[MAXLINE];
+    char resp[MAXBUFFER];
     snprintf(resp, sizeof(resp), "Reservation %s canceled, seat %c%d is now free.\n", code, 'A' + R, C + 1);
     write(connection_fd, resp, strlen(resp));
 }

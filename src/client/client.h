@@ -4,7 +4,7 @@
 #define MAXBUFFER 512
 #define PORT 12345
 #define MAXLINE 64
-#define CODES_FILE "reservationcodes.txt"
+#define CODES_FILE "../fileclient/reservationcodes.txt"
 
 int connection(char *ipaddress);
 void welcome_message(int socket_fd);

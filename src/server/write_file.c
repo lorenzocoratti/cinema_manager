@@ -24,7 +24,7 @@ void init_files(char *rows, char *columns)
     int csv_fd, log_fd, reservationcodes_fd;
     char buf[MAXLINE];
     int len = snprintf(buf, sizeof(buf), "%s,%s\n", rows, columns);
-    if (len < 0 || len >= sizeof(buf))
+    if (len < 0 || len >= (int)sizeof(buf))
     {
         fprintf(stderr, "snprintf error\n");
         return;
@@ -76,7 +76,7 @@ int append_seat_to_csvfile(int R, int C)
 
     char buf[MAXLINE];
     int len = snprintf(buf, sizeof(buf), "%c,%d,1\n", 'A' + R, C + 1);
-    if (len < 0 || len >= sizeof(buf))
+    if (len < 0 || len >= (int)sizeof(buf))
     {
         fprintf(stderr, "snprintf error\n");
         pthread_mutex_unlock(&csv_mutex);

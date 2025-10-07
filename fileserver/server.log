@@ -1,0 +1,5 @@
+[2025-10-07 13:48:01] [INFO] Server started on port 12345
+[2025-10-07 13:48:06] [INFO] Client connected fd = 8
+[2025-10-07 13:48:10] [BOOKING] Client fd = 8 reserved seat B1 with code 20251007-134810-9644-0
+[2025-10-07 13:48:11] [INFO] Client disconnected: fd = 8
+[2025-10-07 13:48:13] [INFO] Server shut down on port 12345
